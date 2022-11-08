@@ -76,7 +76,7 @@ insert into collectiontrack (collection_id, track_id)
 values(1,1),(1,2),(1,4),(1,5),(1,6),(1,7);
 
 select name, data_publicate from albums
-where data_publicate >= '2018-01-01' and data_publicate <= '2018-12-26';
+where data_publicate >= '2018-01-01' and data_publicate <= '2018-12-31';
 
 select name from collection
 where data_publicate >= '2018-01-01' and data_publicate <= '2020-12-26';
@@ -87,8 +87,42 @@ where name not like '% %';
 select name from track
 where name like '%You%';
 
+update track 
+set duration = 301
+where id = 1;
+
+update track 
+set duration = 185
+where id IN (14, 2, 8);
+
+update track 
+set duration = 204
+where id in (3, 6);
+
+update track 
+set duration = 96
+where id in (10, 5, 7);
+
+update track 
+set duration = 117
+where id in (11, 15);
+
+update track 
+set duration = 293
+where id in (4, 16);
+
+ALTER TABLE track ALTER COLUMN duration type int4;
 
 
+update track 
+set duration = 167
+where id in (9, 12, 13);
+
+select name, duration from track
+where duration = (select max(duration) from track);
+
+select name, duration from track
+where duration >= 210;
 
 
 
