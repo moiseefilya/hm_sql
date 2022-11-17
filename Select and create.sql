@@ -124,8 +124,8 @@ where duration = (select max(duration) from track);
 select name, duration from track
 where duration >= 210;
 
-
-
+insert into styleartist(style_id, artist_id)
+values (4,1), (5,1), (6,1), (2,2), (8,2), (3,3), (1,5),(7,5)
 
 
 
