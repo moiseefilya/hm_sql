@@ -91,7 +91,7 @@ from (
 	from track
 	join albums on track.album_id = albums.id
 	group by albums.id, albums.album_name
-	having count(track.id) = -- select запрос на min(count_track)
+	having count(track.id) = -- понимаю что нужен select запрос min(count_track), но не получается выполнить 
 	order by count_track desc
 ) as alb_track
 group by alb_track.album_name, alb_track.count_track
